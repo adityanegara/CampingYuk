@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yelp Camp Aditya</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "/stylesheets/main.css">
+</head>
+<body>
+   <nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+		</div>
+		<div class="collapse navbar-collapse ">
+			<ul class="nav navbar-nav navbar-right">
+				<% if(!currentUser){ %>
+					
+					<li><a href="/login">Login</a></li>
+					<li><a href="/register">Register</a></li>
+				<% }else{ %>
+					<li><a href ="#">Welcome <%=currentUser.username%> </a></li>
+					<li><a href="/logout">Logout</a></li>
+			<% 	} %>
+				
+				
+			</ul>
+		</div>
+	</div>
+	 
+</nav>
+
+	<div class = "container">
+		<% if(error && error.length > 0){ %>
+			<div class = "alert alert-danger"> <%= error %> </div>
+		<% } %>
+		<% if(success && success.length > 0){ %>
+			<div class = "alert alert-success"> <%= success %> </div>
+		<% } %>
+	</div>
+
+
+
+	
