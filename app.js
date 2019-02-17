@@ -1,3 +1,4 @@
+
 var express               = require("express");
 var bodyParser            = require("body-parser");
 var mongoose              = require("mongoose");
@@ -47,6 +48,6 @@ app.use(authenticationRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
 
-app.listen(process.env.PORT, process.env.IP,function(){
-    console.log("Yelp Camp Server is open");
-});
+var server = app.listen(3000, function(){
+    console.log('server is running on port' + server.address().port);
+})

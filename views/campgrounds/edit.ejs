@@ -3,18 +3,34 @@
 	<div class = "row">
 		<h1 style = "text-align: center;"> Edit <%= campground.name%></h1>
 		<div style = "width: 30%; margin : 25px auto;">
-			<form method="POST" action="/campgrounds/<%=campground._id%>?_method=PUT">
+			<form method="POST" action="/campgrounds/<%=campground._id%>?_method=PUT" enctype="multipart/form-data">
 				<div class = "form-group">
+					<label for="campground_name">Campground Name</label>
 					<input type="text" name="campground[name]" id="campground_name" class= "form-control" value = "<%=campground.name%>">
 				</div>
 				<div class = "form-group">
+					<label for="campground_price">Campground Price</label>
 					<input type="number" name="campground[price]" id="campground_price" class= "form-control" value = "<%=campground.price%>" min = "0.01" step="0.01">
 				</div>
+				<div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="campground_image" name="campground[image]" accept="image/*" >
+                </div>
 				<div class= "form-group">
-					<input type="text" name="campground[image]" id="campground_image" class = "form-control" value = "<%= campground.image%>">
+						<label for="campground_location">Campground Location</label>
+						<input type="text" name="campground[location]" id="campground_location" class = "form-control" value = "<%= campground.location%>">
 				</div>
 				<div class= "form-group">
+						<label for="campground_location_iframe">Campground Location</label>
+						<input type="text" name="campground[locationIframe]" id="campground_location_iframe" class = "form-control" value = "<%= campground.locationIframe%>">
+				</div>
+				<div class= "form-group">
+					<label for="campground_description">Campground Description</label>
 					<input type="text" name="campground[description]" id="campground_description" class = "form-control" value = "<%=campground.description%>">
+				</div>
+				<div class = "form-group">
+					<label for="campground_phoneNumber">Phone Number</label>
+					<input type="number" name="campground[phoneNumber]" id="campground_phoneNumber" class= "form-control" value = "<%=campground.price%>" min = "0.01" step="0.01">
 				</div>
 				<div class = "form-group">
 					<input type="submit" name="" class="btn btn-lg btn-primary btn-block">
